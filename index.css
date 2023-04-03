@@ -11,9 +11,6 @@ html, body {
 }
 
 body {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 4fr 2fr 8fr;
   color: rgb(247, 248, 248);
 }
 
@@ -55,6 +52,8 @@ header .contact {
   max-width: 1800px;
   padding: 10px;
   margin: auto;
+  margin-top: 15px;
+  margin-bottom: 15px;
   text-align: center;
   border-radius: 10px;
   background-color: rgb(22, 22, 22);
@@ -80,7 +79,8 @@ header .contact {
   border: solid 1px rgb(130, 143, 255);
 }
 .skills .item {
-  min-height: 400px;
+  min-height: -moz-fit-content;
+  min-height: fit-content;
   padding: 10px;
   border-radius: 10px;
   background-color: transparent;
@@ -99,7 +99,7 @@ header .contact {
   font-size: 3rem;
 }
 
-@media (max-width: 700px) {
+@media (max-width: 720px) {
   body {
     grid-template-rows: 2fr 1fr 8fr;
   }
