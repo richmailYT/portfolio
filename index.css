@@ -15,6 +15,7 @@ body {
 }
 
 header {
+  position: relative;
   display: flex;
   justify-content: space-between;
   padding: 20px;
@@ -22,10 +23,12 @@ header {
   max-width: 1800px;
   margin: auto;
   margin-bottom: 0px;
-  top: 120px;
   border-radius: 10px;
   background-color: rgb(22, 22, 22);
   border: solid 1px rgb(130, 143, 255);
+}
+header .header {
+  display: block;
 }
 header .welcome {
   font-size: 2.8rem;
@@ -38,6 +41,8 @@ header .welcome h1 {
 }
 header .contact {
   display: flex;
+  height: -moz-fit-content;
+  height: fit-content;
   padding: 10px;
   border-radius: 10px;
   background-color: rgb(37, 37, 37);
@@ -63,22 +68,35 @@ header .contact {
 }
 
 .skills {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(1, 1fr);
   padding: 30px;
   width: 90vw;
   max-width: 1800px;
   margin: auto;
   margin-top: 0px;
   margin-bottom: 0px;
-  top: 260px;
-  gap: 3rem;
   border-radius: 10px;
   background-color: rgb(22, 22, 22);
   border: solid 1px rgb(130, 143, 255);
 }
-.skills .item {
+.skills .wrapper {
+  display: flex;
+  padding: 30px;
+  gap: 4rem;
+}
+.skills .wrapper .section {
+  flex: 1;
+  min-height: -moz-fit-content;
+  min-height: fit-content;
+}
+.skills .wrapper .section .container {
+  display: grid;
+  height: 90%;
+  grid-template-columns: repeat(1, 1fr);
+  grid-template-rows: repeat(1, 1fr);
+  gap: 3rem;
+}
+.skills .wrapper .section .container .item {
+  position: relative;
   min-height: -moz-fit-content;
   min-height: fit-content;
   padding: 10px;
@@ -88,14 +106,15 @@ header .contact {
   border-radius: 10px;
   background-color: rgb(22, 22, 22);
   border: solid 1px #203c4c;
+  box-shadow: 0 0 10px #203c4c;
 }
-.skills .item .details {
+.skills .wrapper .section .container .item .details {
   margin: 3rem;
 }
-.skills .item .details p {
+.skills .wrapper .section .container .item .details p {
   font-size: 2rem;
 }
-.skills .item h1 {
+.skills .wrapper .section .container .item h1 {
   font-size: 3rem;
 }
 
@@ -109,8 +128,7 @@ header .contact {
   .about-me p {
     font-size: 18px;
   }
-  .skills {
-    grid-template-columns: repeat(1, 1fr);
-    grid-template-rows: repeat(2, 1fr);
+  .wrapper {
+    flex-direction: column;
   }
 }/*# sourceMappingURL=index.css.map */
